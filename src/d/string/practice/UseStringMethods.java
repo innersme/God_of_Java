@@ -1,5 +1,7 @@
 package d.string.practice;
 
+import d.string.StringSample;
+
 public class UseStringMethods {
     public static void main(String[] args){
         String str = "The String class represents character strings.";
@@ -8,6 +10,7 @@ public class UseStringMethods {
         returnStr.findString(str, "string");
         returnStr.findAnyCaseString(str, "string");
         returnStr.countChar(str, 's');
+        returnStr.printContainWords(str, "ss");
     }
 
     public void printWords(String str){
@@ -40,4 +43,14 @@ public class UseStringMethods {
         System.out.println("char '" + c + "' count is "+count);
     }
 
+    public void printContainWords(String str, String findStr){
+        String[] stringArr = str.split(" ");
+        String returnString = null;
+        for (String stringValue : stringArr ){
+            if ( stringValue.contains(findStr) == true ) {
+                returnString = stringValue;
+            }
+        }
+        System.out.println(returnString + " contains " + findStr);
+    }
 }
